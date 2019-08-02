@@ -15,15 +15,20 @@
         <div class="coffee-mug">
             <h2>Tea Round</h2>
             <h3>Whos turn is it?</h3>
-        </div>
-        <div class="form--container">
-            <form id="saveContactForm" action="javascript:void(0);" method="POST" onsubmit="addPlayer()">
-                <input type="text" id="addPlayer" placeholder="Player name">
-                <input type="submit" value="Add">
-            </form>
+
+            <div id="player-list">
+
+            </div>
+
+            <div class="form--container">
+                <form id="saveContactForm" action="javascript:void(0);" method="POST" onsubmit="addaPlayer()">
+                    <input type="text" id="addPlayer" placeholder="Player name">
+                    <input type="submit" value="Add">
+                </form>
+            </div>
         </div>
     </main>
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>

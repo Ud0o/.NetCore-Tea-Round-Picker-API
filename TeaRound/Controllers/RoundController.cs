@@ -8,7 +8,7 @@ using TeaRound.Models;
 
 namespace TeaRound.Controllers
 {
-    [Route("api/todo")]
+    [Route("api/round")]
     [ApiController]
     public class RoundController : ControllerBase
     {
