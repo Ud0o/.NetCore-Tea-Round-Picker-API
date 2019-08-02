@@ -9,8 +9,8 @@
 </head>
 <body>
     <main id="wrapper">
-        <div id="content--winner">
-            <ul id="content--winner__result"></ul>
+        <div class="chosen-container">
+            <div class="chosen"></div>
         </div>
         <div class="coffee-mug">
             <h2>Tea Round</h2>
@@ -20,11 +20,15 @@
 
             </div>
 
-            <div class="form--container">
-                <form id="saveContactForm" action="javascript:void(0);" method="POST" onsubmit="addaPlayer()">
+            <div class="form-container">
+                <form id="saveContactForm" action="javascript:void(0);" method="POST" onsubmit="newPlayer()">
                     <input type="text" id="addPlayer" placeholder="Player name">
                     <input type="submit" value="Add">
                 </form>
+            </div>
+            <div class="button-container">
+                <input type="button" id="savePlayer" class="btn" value="Add to game" />
+                <input type="button" id="randomPlayer" class="btn" value="Randomize" onclick="getRandomPlayer()" />
             </div>
         </div>
     </main>

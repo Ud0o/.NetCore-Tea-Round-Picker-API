@@ -24,15 +24,36 @@ h1, h2, h3 {
     justify-content: center;
     align-items: center;
 }
+.chosen-container{
+    padding: 0px 20px
+}
+.chosen{
+    font-family: 'Luckiest Guy', cursive;
+    font-size:3em;
+}
 #player-list {
     display:flex;
     flex-direction:column;
     height: 50%;
 }
-.form--container {
+.form-container {
     z-index: 1;
 }
-
+.button-container{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#savePlayer, #randomPlayer{
+    border:none;
+    outline:none;
+    padding: 10px;
+    border-radius:3px;
+    text-align:center;
+    margin: 10px auto 10px auto;
+    background: #77665C;
+    color: #EFF0D1;
+}
 
 
 

@@ -1,4 +1,5 @@
 ﻿const uri = "api/round/";
+//$.ajaxSetup({ cache: false });
 $(document).ready(function () {
     getPlayers();
 });
@@ -23,7 +24,7 @@ function getPlayers() {
     });
 }
 
-function addaPlayer() {
+function newPlayer() {
     const player = {
         Name: $('#addPlayer').val()
     };
@@ -54,4 +55,14 @@ function deletePlayer(id){
             getPlayers();
         }
     });
+}
+
+function getRandomPlayer(){
+    $.ajax({
+        type: 'GET',
+        url: uri + "GetRandomPlayer",
+        success: function (data) {
+            $(".chosen").text(data.name);
+        }
+    })
 }
