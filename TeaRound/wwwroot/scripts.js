@@ -11,10 +11,10 @@ function getPlayers() {
             const playerList = $("#player-list");
             $(playerList).empty();
             $.each(data, function (key, item) {
-                const player = $("<div></div>")
-                    .text(item.name)
+                const player = $("<div class='player'></div>")
+                    .append($("<div>"+item.name+"</div>"))
                     .append(
-                        $("<button>Delete</button>").on("click", function () {
+                        $("<img src='img/delete.svg' id='delete-player'/>").on("click", function () {
                             deletePlayer(item.id);
                         })
                     );
@@ -26,7 +26,7 @@ function getPlayers() {
 
 function newPlayer() {
     const player = {
-        Name: $('#addPlayer').val()
+        Name: $('#player-name').val()
     };
     $.ajax({
         type: 'POST',
@@ -39,9 +39,8 @@ function newPlayer() {
             alert("Something went wrong!");
         },
         success: function (result) {
-            //getData();
-            $("#addPlayer").val("");
-            $("#addPlayer").focus();
+            $("#player-name").val("");
+            $("#player-name").focus();
             getPlayers();
         }
     });
@@ -62,7 +61,8 @@ function getRandomPlayer(){
         type: 'GET',
         url: uri + "GetRandomPlayer",
         success: function (data) {
-            $(".chosen").text(data.name);
+            $(".chosen-player").text(data.name);
+            $(".chosen-container").show();
         }
     })
 }
