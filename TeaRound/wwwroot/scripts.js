@@ -64,5 +64,5 @@ function getRandomPlayer(){
             $(".chosen-player").text(data.name);
             $(".chosen-container").show();
         }
-    })
+    });
 }

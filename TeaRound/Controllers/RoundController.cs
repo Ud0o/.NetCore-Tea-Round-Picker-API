@@ -39,16 +39,17 @@ namespace TeaRound.Controllers
             var randomNumber = rnd.Next(numberOfPlayers);
 
             //Get all players currently in list
-            var allPlayers = await GetPlayers();
-            //Return into an array
-            var allPlayersArray = allPlayers.Value.ToArray();
+            var playersArray = _context.Players.ToArray();
 
             //Get player from array using the randomNumber
-            return await GetPlayer(allPlayersArray[randomNumber].Id);
+            var randomPlayer = await _context.Players.FindAsync(playersArray[randomNumber].Id);
+            randomPlayer.TimesSelected = +1;
+
+            return randomPlayer;
         }
 
         [HttpPost]
-        public async Task<ActionResult<Player>> PostPlayer(Player player)
+        public async Task<ActionResult<Player>> AddPlayer(Player player)
         {
             player.TimesSelected = 0;
             if(player.Name == string.Empty){
